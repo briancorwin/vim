@@ -25,7 +25,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
-" Plugin 'terryma/vim-multiple-cursors'
 Plugin 'stefandtw/quickfix-reflector.vim'
 
 "" Snippets
@@ -50,7 +49,7 @@ Plugin 'klen/python-mode'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'oplatek/Conque-Shell'
+" Plugin 'oplatek/Conque-Shell'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -194,11 +193,11 @@ let g:ycm_filetype_whitelist = {
         \}
 
 "" ConqueTerm
-let g:ConqueTerm_FastMode = 1
-" Shut off some annoying warnings
-let g:ConqueTerm_StartMessages = 0
-let g:ConqueTerm_CWInsert = 1
-let g:ConqueTerm_InsertOnEnter = 1
+" let g:ConqueTerm_FastMode = 1
+" " Shut off some annoying warnings
+" let g:ConqueTerm_StartMessages = 0
+" let g:ConqueTerm_CWInsert = 1
+" let g:ConqueTerm_InsertOnEnter = 1
 
 
 """ KEYMAP
@@ -286,5 +285,5 @@ nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nmap <silent><Leader>l :SyntasticCheck<CR>
 
 "" ConqueTerm
-let g:ConqueTerm_SendVisKey = '<F9>'
-let g:ConqueTerm_ExecFileKey = '<F11>'
+" let g:ConqueTerm_SendVisKey = '<F9>'
+" let g:ConqueTerm_ExecFileKey = '<F11>'
