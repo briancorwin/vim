@@ -30,6 +30,7 @@ Plugin 'stefandtw/quickfix-reflector.vim'
 "" Snippets
 " Plugin 'honza/vim-snippets'
 " Plugin 'SirVer/ultisnips'
+" Plugin 'matthewsimo/angular-vim-snippets'
 
 "" Git
 Plugin 'tpope/vim-fugitive'
@@ -39,25 +40,21 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'klen/python-mode'
 
 "" Javascript
-" Plugin 'pangloss/vim-javascript'
-" Plugin 'othree/javascript-libraries-syntax.vim'
-" Plugin 'marijnh/tern_for_vim'
-" Plugin 'burnettk/vim-angular'
-" Plugin 'matthewsimo/angular-vim-snippets'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'moll/vim-node'
+Plugin 'burnettk/vim-angular'
 
 "" Hardcore IDE
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'Valloric/YouCompleteMe'
-" Plugin 'oplatek/Conque-Shell'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required, enable loading indent file for filetype
 
-
-""" GOOGLE VIM
-execute 'source' '~/.vim/google.vim'
 
 
 """ GENERAL SETTINGS
@@ -178,11 +175,11 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_enable_highlighting = 0
 
-"" JS Libraries (DISABLED)
-" let g:used_javascript_libs = 'angularjs'
+"" JS Libraries
+let g:used_javascript_libs = 'jquery,underscore,chai,jasmine,angularjs,angularui'
 
-"" Angular (DISABLED)
-" let g:angular_filename_convention = 'titlecased'
+"" Angular
+let g:angular_filename_convention = 'titlecased'
 
 "" YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -190,14 +187,9 @@ let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_min_num_identifier_candidate_chars = 2
 let g:ycm_filetype_whitelist = {
         \ 'python': 1,
+        \ 'javascript': 1,
         \}
 
-"" ConqueTerm
-" let g:ConqueTerm_FastMode = 1
-" " Shut off some annoying warnings
-" let g:ConqueTerm_StartMessages = 0
-" let g:ConqueTerm_CWInsert = 1
-" let g:ConqueTerm_InsertOnEnter = 1
 
 
 """ KEYMAP
@@ -284,6 +276,6 @@ nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 "" Syntastic
 nmap <silent><Leader>l :SyntasticCheck<CR>
 
-"" ConqueTerm
-" let g:ConqueTerm_SendVisKey = '<F9>'
-" let g:ConqueTerm_ExecFileKey = '<F11>'
+
+""" GOOGLE VIM
+execute 'source' '~/.vim/google.vim'
