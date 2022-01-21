@@ -36,20 +36,10 @@ Plugin 'stefandtw/quickfix-reflector.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
-"" Python
-Plugin 'klen/python-mode'
-
-"" Javascript
-Plugin 'pangloss/vim-javascript'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'moll/vim-node'
-Plugin 'burnettk/vim-angular'
-
 "" Hardcore IDE
 Plugin 'scrooloose/syntastic'
-Plugin 'majutsushi/tagbar'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'majutsushi/tagbar'
+" Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -118,28 +108,6 @@ set noswapfile
 
 """ PLUGIN SETTINGS
 
-"" Python Mode (only used for syntax, virtualenv, breakpoint, motion, etc.)
-let g:pymode_options_max_line_length = 120
-let g:pymode_python = 'python'
-" Features to turn off/on
-let g:pymode_trim_whitespaces = 0  " Do not autoremove unused whitespaces
-let g:pymode_run = 0
-let g:pymode_folding = 0
-" NOTE: YCM does autocompletion
-let g:pymode_rope = 0
-" NOTE: Syntastic does linting
-let g:pymode_lint = 0
-let g:pymode_lint_write = 0
-let g:pymode_doc = 1
-let g:pymode_indent = 1
-let g:pymode_options_colorcolumn = 1
-let g:pymode_motion = 1
-let g:pymode_breakpoint = 1
-let g:pymode_virtualenv = 1
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_slow_sync = 0
-
 "" NERD Commenter
 let g:NERDSpaceDelims = 1
 
@@ -174,21 +142,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_enable_highlighting = 0
-
-"" JS Libraries
-let g:used_javascript_libs = 'jquery,underscore,chai,jasmine,angularjs,angularui'
-
-"" Angular
-let g:angular_filename_convention = 'titlecased'
-
-"" YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_min_num_of_chars_for_completion = 2
-let g:ycm_min_num_identifier_candidate_chars = 2
-let g:ycm_filetype_whitelist = {
-        \ 'python': 1,
-        \ 'javascript': 1,
-        \}
 
 
 
@@ -257,25 +210,5 @@ nmap <Leader>ha <Plug>GitGutterStageHunk
 nmap <Leader>hu <Plug>GitGutterRevertHunk
 nmap <Leader>hr <Plug>GitGutterPreviewHunk
 
-"" Python Mode
-" Python motion commands
-" [[            Jump on previous class or function (normal, visual, operator modes)
-" ]]            Jump on next class or function (normal, visual, operator modes)
-" [M            Jump on previous class or method (normal, visual, operator modes)
-" ]M            Jump on next class or method (normal, visual, operator modes)
-" aC                Select a class. Ex: vaC, daC, yaC, caC (normal, operator modes)
-" iC                Select inner class. Ex: viC, diC, yiC, ciC (normal, operator modes)
-" aM                Select a function or method. Ex: vaM, daM, yaM, caM (normal, operator modes)
-" iM                Select inner function or method. Ex: viM, diM, yiM, ciM (normal, operator modes)
-
-let g:pymode_breakpoint_bind = '<Leader>b'
-
-"" YouCompleteMe
-nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
-
 "" Syntastic
 nmap <silent><Leader>l :SyntasticCheck<CR>
-
-
-""" GOOGLE VIM
-execute 'source' '~/.vim/google.vim'
